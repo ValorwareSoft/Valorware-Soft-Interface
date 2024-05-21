@@ -40,12 +40,21 @@
 
 .main {
     padding: 0px 30px;
-
+    padding-top: 30px !important;
     @media (max-width: 992px) {
         padding: 0px 6px !important;
+        padding-top: 20px !important;
     }
 }
 
+.content{
+    margin-top: 1rem;
+    text-align: justify !important;
+    color: #000000;
+    line-height: 2 !important;
+    font-size: calc(12px + 2 * (100vw - 320px) / 1920);
+    margin-bottom: 5rem !important;
+}
 
 button {
     background-color: #040DE3;
@@ -54,4 +63,10 @@ button {
     border: none !important;
     padding: 5px 10px;
     font-size: 13px;
+}
+
+
+.heading{
+    font-family: "Poetsen One", sans-serif !important;
+    font-size: 30px;
 }
