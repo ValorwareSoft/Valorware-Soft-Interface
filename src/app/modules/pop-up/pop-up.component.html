@@ -1,1 +1,33 @@
-<p>pop-up works!</p>
+<div class="m-4 popup-class" *ngIf="data.title === 'Success'">
+    <div class="d-flex justify-content-center align-items-center pb-4">
+        <img src="../../../assets/images/popup (2).png" alt="">
+    </div>
+
+    <p class="text-center green-color">
+        Thank you for reaching out. Our team will contact you shortly.
+    </p>
+
+    <div class="d-flex justify-content-center align-items-center mt-2">
+        <button (click)="navigateToAboutUs()">Know More</button>
+    </div>
+
+</div>
+
+<div class="m-4 popup-class" *ngIf="data.title === 'Error'">
+    <div class="d-flex justify-content-center align-items-center pb-4">
+        <img src="../../../assets/images/popup (1).png" alt="">
+    </div>
+
+    <p class="text-center red-color">
+        We apologize, but it seems that we haven't received your message. Please try again or contact us through an
+        alternative method. Thank you.
+    </p>
+
+</div>
+
+
+
+
+<div class="close" (click)="onClose()">
+    <i class="bi bi-x-lg" matTooltipPosition="below" [matTooltip]="CLOSE"></i>
+</div>

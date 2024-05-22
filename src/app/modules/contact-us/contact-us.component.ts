@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { SearchCountryField, CountryISO, PhoneNumberFormat, NgxIntlTelInputModule } from 'ngx-intl-tel-input';
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from '../pop-up/pop-up.component';
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [CommonModule, NgxIntlTelInputModule,RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, NgxIntlTelInputModule, RouterModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
@@ -27,7 +28,7 @@ export class ContactUsComponent {
     this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   }
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, public dialog: MatDialog) {
     this.customCodeForm = this.formBuilder.group({
       firstName: [
         '',
@@ -96,11 +97,21 @@ export class ContactUsComponent {
 
   onSubmit(): void {
     if (this.customCodeForm.valid) {
-      
+      this.openDialog('Success');
     } else {
       this.customCodeForm.markAllAsTouched();
-      
+      this.openDialog('Error');
     }
+  }
+
+  openDialog(title: string): void {
+    this.dialog.open(PopUpComponent, {
+      data: {
+        title: title,
+      },
+      disableClose: true,
+      hasBackdrop: true
+    });
   }
 
 

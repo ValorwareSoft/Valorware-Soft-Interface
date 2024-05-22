@@ -36,3 +36,8 @@
 .fixed-top {
     z-index: 1000 !important;
 }
+
+html, body {
+    scroll-behavior: auto !important;
+  }
+  
