@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./find-jobs.component.scss']
 })
 export class FindJobsComponent {
-
+  haveJobs : boolean = false;
 }
