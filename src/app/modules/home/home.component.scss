@@ -127,22 +127,17 @@ button {
 }
 
 .card {
-    max-width: 350px;
-    min-width: 280px;
-    margin: 15px 15px;
+    flex-grow: 1;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 
-    @media screen and (min-width: 800px) {
-        display: block;
-        align-content: center !important;
-        min-height: 240px;
-        max-height: 240px;
-
+    @media screen and (min-width : 702px) and (max-width: 902px) {
+        width: 300px !important;
     }
 
-    @media screen and (max-width : 576px) {
-        margin: 15px 0px !important;
+    @media screen and (min-width : 902px) {
+        width: 400px !important;
     }
+
 }
 
 .cursor-pointer {
@@ -155,8 +150,6 @@ button {
     text-align: justify;
     font-size: 13px !important;
     color: black !important;
-
-
 }
 
 .card-title {
@@ -165,23 +158,21 @@ button {
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: calc(17px + 2 * (100vw - 320px) / 1920);
+    font-size: calc(15px + 2 * (100vw - 320px) / 1920);
     margin-bottom: 1.5rem;
 }
 
 .card-body {
-
-
     img {
-        width: 28px;
-        height: 28px;
-        margin: 0px 10px;
+        width: 26px;
+        height: 26px;
+        margin-right: 10px
     }
 }
 
 .main-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    column-gap: 20px !important;
+    row-gap: 20px !important;
 }

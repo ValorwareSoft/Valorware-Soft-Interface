@@ -18,7 +18,7 @@
 .content {
     line-height: 1.4 !important;
     font-size: calc(12px + 2 * (100vw - 320px) / 1920);
-    margin-bottom: 5rem !important;
+    margin-bottom: 3rem !important;
     color: #888888;
 }
 
@@ -45,4 +45,56 @@ button {
     font-family: "Kite One", sans-serif;
     font-weight: 400;
     font-size: 12px;
+}
+
+.div-1 {
+    width: 278px !important;
+}
+
+.contact-div {
+    background-color: #FAFAFA !important;
+    border-radius: 10px;
+    padding: 10px;
+
+    .circle {
+        width: 50px !important;
+        height: 50px !important;
+        background-color: white !important;
+        border-radius: 50%;
+        font-size: 25px !important;
+        color: #040DE3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info {
+        color: #040DE3;
+        font-weight: 600;
+        display: grid !important;
+
+        span {
+            margin-bottom: 0px;
+            font-size: 14px !important;
+        }
+
+        padding-left: 15px;
+        text-align: left;
+
+        a {
+            text-decoration: none;
+            color: black !important;
+            font-weight: 500;
+            font-size: 13px !important;
+        }
+    }
+}
+
+.images{
+    display: flex;
+    img {
+        width: 278px !important;
+        position: absolute;
+        bottom: 50px !important;
+    }
 }

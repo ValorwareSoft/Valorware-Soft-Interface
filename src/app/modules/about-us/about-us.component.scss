@@ -41,13 +41,14 @@
 .main {
     padding: 0px 30px;
     padding-top: 30px !important;
+
     @media (max-width: 992px) {
         padding: 0px 6px !important;
         padding-top: 20px !important;
     }
 }
 
-.content{
+.content {
     margin-top: 1rem;
     text-align: justify !important;
     color: #000000;
@@ -66,7 +67,86 @@ button {
 }
 
 
-.heading{
+.heading {
     font-family: "Poetsen One", sans-serif !important;
     font-size: 30px;
+}
+
+
+.services {
+    margin-top: 4rem;
+    text-align: center !important;
+    color: #000000;
+    line-height: 1.6 !important;
+    font-size: calc(11px + 2 * (100vw - 320px) / 1920);
+
+
+    .header {
+        color: #040DE3 !important;
+        font-size: calc(20px + 2 * (100vw - 320px) / 1920);
+        font-weight: 600;
+        margin-bottom: 5px !important;
+    }
+
+}
+
+.card {
+    flex-grow: 1;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    @media screen and (min-width : 702px) and (max-width: 902px) {
+        width: 300px !important;
+    }
+
+    @media screen and (min-width : 902px) {
+        width: 400px !important;
+    }
+
+    &.custom-card-2{
+        @media screen and (min-width : 1330px) {
+            width: 500px !important;
+        }
+
+        @media screen and (min-width : 1629px) {
+            width: 700px !important;
+        }
+    }
+
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+
+
+.card-text {
+    text-align: justify;
+    font-size: 13px !important;
+    color: black !important;
+}
+
+.card-title {
+    color: black !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: calc(15px + 2 * (100vw - 320px) / 1920);
+    margin-bottom: 1.5rem;
+}
+
+.card-body {
+    img {
+        width: 26px;
+        height: 26px;
+        margin-right: 10px
+    }
+}
+
+.main-cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px !important;
+    row-gap: 20px !important;
 }
