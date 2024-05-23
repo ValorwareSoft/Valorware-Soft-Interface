@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PopUpComponent } from '../pop-up/pop-up.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-find-jobs',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatDialogModule],
   templateUrl: './find-jobs.component.html',
   styleUrls: ['./find-jobs.component.scss']
 })
 export class FindJobsComponent {
-  haveJobs: boolean = true;
+  constructor(public dialog: MatDialog) { }
+  haveJobs: boolean = false;
   cardsData = [
     {
       number: "VWS2K24001",
@@ -103,5 +106,19 @@ export class FindJobsComponent {
       numberOfApplicants: 11
     }
   ];
+
+  onSubmit(): void {
+    this.openDialog('submit-resume');
+  }
+
+  openDialog(title: string): void {
+    this.dialog.open(PopUpComponent, {
+      data: {
+        title: title,
+      },
+      disableClose: true,
+      hasBackdrop: true
+    });
+  }
 
 }

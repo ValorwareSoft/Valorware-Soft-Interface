@@ -28,7 +28,7 @@ export class ContactUsComponent {
     this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   }
 
-  constructor(private formBuilder: FormBuilder, private router: Router, public dialog: MatDialog) {
+  constructor(private formBuilder: FormBuilder, public dialog: MatDialog) {
     this.customCodeForm = this.formBuilder.group({
       firstName: [
         '',

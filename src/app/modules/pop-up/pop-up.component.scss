@@ -11,18 +11,18 @@ p {
     max-width: 600px !important;
 }
 
-.red-color{
+.red-color {
     color: #FE4D4D;
 }
 
-.close{
+.close {
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
 }
 
-.green-color{
+.green-color {
     color: #09454D;
 }
 
@@ -34,3 +34,110 @@ button {
     padding: 5px 10px;
     font-size: 13px;
 }
+
+.body-content {
+    max-width: 700px;
+    margin: auto;
+
+    @media screen and (max-width: 768px) {
+        max-width: 400px !important;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 0px 30px !important;
+        max-width: 700px !important;
+    }
+}
+
+.body-content {
+    @media screen and (min-width: 320px) {
+        padding: 0px 10px;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0px !important;
+    }
+}
+
+.body-content {
+    border-radius: 30px;
+
+    @media screen and (max-width: 768px) {
+        border-radius: 20px !important;
+    }
+
+    @media screen and (min-width: 768px) {
+        border-radius: 30px !important;
+    }
+}
+
+
+.sub-heading {
+    span {
+      cursor: pointer;
+    }
+  }
+  
+  .text-danger {
+    font-size: 10px !important;
+    margin-top: 4px;
+    color: red !important;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .mb-3{
+    padding: 0px !important;
+  }
+  
+  .main-heading {
+    font-size: calc(20px + 2 * (100vw - 320px) / 1600);
+    font-weight: 500;
+    color: black;
+  }
+  
+  input[type="text"],
+  [type="email"],
+  [type="number"] {
+    color: black !important;
+    font-size: 14px !important;
+    height: 40px !important;
+  }
+  
+  textarea {
+    color: black !important;
+    font-size: 14px !important;
+  }
+  
+  .form-control:focus {
+    box-shadow: none !important;
+  }
+  
+  label {
+    font-size: 12px;
+  }
+  
+  .form-label {
+    margin-bottom: 5px !important;
+  }
+  
+  .form-control::placeholder {
+    color: #dee2e6 !important;
+    font-size: 12px;
+  }
+  
+  .form-control:focus {
+    border-color: #dee2e6 !important;
+  }
+  
+  .btn-primary {
+    background-color: #040de3 !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    border: none !important;
+    min-width: 100px !important;
+  }
