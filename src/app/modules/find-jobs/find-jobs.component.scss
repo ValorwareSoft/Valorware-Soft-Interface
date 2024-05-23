@@ -1,6 +1,7 @@
 .main {
     padding: 0px 30px;
     padding-top: 30px !important;
+    margin: auto !important;
 
     @media (max-width: 992px) {
         padding: 0px 6px !important;
@@ -10,20 +11,20 @@
 
     text-align: center !important;
 
-    @media screen and (min-width : 992px) {
-        width: calc(100vw - 60px);
+    @media screen and (min-width: 992px) {
+        width: calc(100vw - 30px);
     }
 }
 
 .content {
     line-height: 2 !important;
     font-size: calc(12px + 2 * (100vw - 320px) / 1920);
-    margin-bottom: 5rem !important;
+    margin-bottom: 3rem !important;
     color: #888888;
 }
 
 button {
-    background-color: #040DE3;
+    background-color: #040de3;
     color: white;
     border-radius: 5px;
     border: none !important;
@@ -31,13 +32,127 @@ button {
     font-size: 13px;
 }
 
-
 .heading {
     font-family: "Poetsen One", sans-serif !important;
     font-size: 30px;
 
-    @media screen and (max-width : 330px) {
+    @media screen and (max-width: 330px) {
         font-size: 28px !important;
+    }
+}
 
+.know-more {
+    padding: 15px;
+    box-shadow: 0 10px 20px #29292a12;
+    border: 2px solid #eff5f6;
+    border-radius: 20px;
+
+    p {
+        margin-bottom: 8px !important;
+    }
+
+    .header {
+        color: #040de3 !important;
+        font-size: calc(20px + 2 * (100vw - 320px) / 1920);
+        font-weight: 600;
+        margin-bottom: 0px !important;
+    }
+
+    margin-top: 4rem;
+    text-align: justify !important;
+    color: #000000;
+    line-height: 2 !important;
+    font-size: calc(12px + 2 * (100vw - 320px) / 1920);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    @media (max-width: 776px) {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px !important;
+
+        img {
+            margin-right: 0px !important;
+            margin-bottom: 1.2rem !important;
+        }
+    }
+
+    img {
+        width: 180px !important;
+        margin-right: 30px;
+    }
+}
+
+.nojobs {
+    img {
+        width: 180px !important;
+        margin-right: 30px;
+    }
+
+    p {
+        color: #fe4d4d;
+        font-size: calc(16px + 2 * (100vw - 320px) / 1920);
+        font-family: "Poetsen One", sans-serif !important;
+    }
+
+    padding-bottom: 80px !important;
+}
+
+.jobs {
+    column-gap: 30px;
+    row-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+
+    .card {
+        // flex-grow: 1;
+        box-shadow: 0 10px 20px #29292a12;
+        width: 300px;
+        border: 2px solid #eff5f6;
+        border-radius: 10px;
+
+        button {
+            min-width: 150px;
+            padding: 10px 20px !important;
+            margin: 15px;
+        }
+    }
+
+    .card-title {
+        color: black !important;
+        text-align: left;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-text {
+        text-align: justify;
+        font-size: 13px !important;
+        color: #575757 !important;
+    }
+
+    .card-body {
+        padding: 20px !important;
+        padding-bottom: 10px !important;
+
+        p {
+            margin-bottom: 2px !important;
+        }
+
+
+    }
+
+    .card-link {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320))) !important;
     }
 }

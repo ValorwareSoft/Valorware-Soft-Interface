@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './modules/about-us/about-us.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { FindJobsComponent } from './modules/find-jobs/find-jobs.component';
@@ -14,9 +14,12 @@ const routes: Routes = [
   { path: 'find-jobs', component: FindJobsComponent },
   { path: 'contact-us', component: ContactUsComponent },
 ];
-
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'top', 
+  anchorScrolling: 'enabled', 
+};
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

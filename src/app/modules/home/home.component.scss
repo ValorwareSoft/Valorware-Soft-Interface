@@ -128,7 +128,10 @@ button {
 
 .card {
     flex-grow: 1;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px #29292a12;
+    border: 2px solid #eff5f6;
+    border-radius: 10px;
 
     @media screen and (min-width : 702px) and (max-width: 902px) {
         width: 300px !important;
