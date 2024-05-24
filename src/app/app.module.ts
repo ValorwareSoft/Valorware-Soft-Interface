@@ -7,6 +7,7 @@ import { NavbarComponent } from "./modules/navbar/navbar.component";
 import { FooterComponent } from "./modules/footer/footer.component";
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,12 @@ import {BrowserAnimationsModule} from  '@angular/platform-browser/animations';
         NavbarComponent,
         FooterComponent,
         NgxIntlTelInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            preventDuplicates: true,
+            timeOut: 2000,
+            maxOpened: 1
+        }),
     ]
 })
 export class AppModule { }

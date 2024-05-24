@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-find-jobs',
@@ -12,8 +13,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   styleUrls: ['./find-jobs.component.scss']
 })
 export class FindJobsComponent {
-  constructor(public dialog: MatDialog) { }
-  haveJobs: boolean = false;
+  constructor(public dialog: MatDialog, private router: Router) { }
+  haveJobs: boolean = true;
   cardsData = [
     {
       number: "VWS2K24001",
@@ -119,6 +120,10 @@ export class FindJobsComponent {
       disableClose: true,
       hasBackdrop: true
     });
+  }
+
+  applyNow(cardNumber: string) {
+    this.router.navigate(['/apply', cardNumber]);
   }
 
 }

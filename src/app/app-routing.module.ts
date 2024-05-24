@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './modules/about-us/about-us.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { FindJobsComponent } from './modules/find-jobs/find-jobs.component';
 import { HomeComponent } from './modules/home/home.component';
 import { ServicesComponent } from './modules/services/services.component';
+import { ViewJobComponent } from './modules/view-job/view-job.component';
+import { Routes, ExtraOptions, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'find-jobs', component: FindJobsComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  {path : 'apply/:cardNumber', component : ViewJobComponent}
 ];
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'top', 

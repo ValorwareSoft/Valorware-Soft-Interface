@@ -1,1 +1,106 @@
-<p>view-job works!</p>
+<div class=" main d-lg-flex">
+    <div class="div-1">
+        <div class="d-sm-flex justify-content-between align-items-start ">
+            <div class="headers">
+                <p class="pb-1">UX/UI Developer</p>
+                <div class="location pb-1">
+                    <i class="bi bi-geo-alt-fill"></i> Kothagudem, India
+                </div>
+                <div class="mini-tip ">
+                    <div>
+                        Full Time
+                    </div>
+                    <div>
+                        Remote
+                    </div>
+                    <div>
+                        2-4 Years
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center buttons mt-sm-2 mt-4">
+                <button  (click)="onSubmit('apply-job')">Submit Profile</button>
+                <button class="share" (click)="onSubmit('copy-link')">
+                    <i class="bi bi-share-fill" matTooltipPosition="below" [matTooltip]="SHARE"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mt-5 description">
+            <p>About this role</p>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime exercitationem quisquam delectus
+                incidunt pariatur quas recusandae laudantium, totam, nisi corrupti harum, facere dolorem temporibus
+                laboriosam dolor animi numquam. Facere officia eum rerum, non at reiciendis perspiciatis eveniet cum
+                Quaerat eius praesentium cumque! Recusandae praesentium voluptatibus ducimus quibusdam illo officia
+                impedit necessitatibus dolorem eos nesciunt totam sit, rem earum, mollitia, incidunt dolor eaque
+                repudiandae tenetur est nobis? Sunt in nisi velit dolorum, autem labore fugit.</span>
+            <p>Qualification</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, voluptatibus?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptatibus explicabo nisi
+                    repellendus magnam rerum?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quidem assumenda quos provident
+                    laborum laudantium iste, cupiditate officia. Possimus, fugit eaque. Sunt amet sint tenetur molestiae
+                    tempora laudantium omnis atque.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+            <p>Responsibility</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, voluptatibus?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis voluptatibus explicabo nisi
+                    repellendus magnam rerum?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quidem assumenda quos provident
+                    laborum laudantium iste, cupiditate officia. Possimus, fugit eaque. Sunt amet sint tenetur molestiae
+                    tempora laudantium omnis atque.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </div>
+        <div class="know-more mb-4 mt-4">
+
+            <div>
+                <p class="header">Explore your future</p>
+                <p>Even if you don't see a position that suits you among our current openings, we encourage you to
+                    submit
+                    your details. Your next opportunity could be just around the corner.</p>
+
+                <div class="d-flex justify-content-end mt-3" (click)="onSubmit('submit-resume')">
+                    <button>Submit Details</button>
+                </div>
+            </div>
+            <div>
+                <img src="../../../assets/images/jobs (2).png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="div-2">
+        <p class="heading">Other Jobs from Valorware Soft</p>
+        <div class="scroll-container">
+            <div class="other-jobs">
+                <div class="card" *ngFor="let card of cardsData">
+                    <div class="card-body" (click)="applyNow(card.number)">
+                        <p class="card-text">{{ card.number }}</p>
+                        <h5 class="card-title mb-4">{{ card.title }}</h5>
+
+                        <div class="location">
+                            <i class="bi bi-geo-alt-fill"></i> Kothagudem, India
+                        </div>
+                        <div class="mini-tip">
+                            <div>
+                                Full Time
+                            </div>
+                            <div>
+                                Remote
+                            </div>
+                            <div>
+                                2-4 Years
+                            </div>
+                        </div>
+                        <div class="time">
+                            2 days ago <i class="bi bi-dot"></i> 210 Applicants
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

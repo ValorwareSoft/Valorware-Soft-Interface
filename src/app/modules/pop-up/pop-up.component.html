@@ -23,12 +23,31 @@
     </p>
 </div>
 
-<div class="close" (click)="onClose()">
-    <i class="bi bi-x-lg" matTooltipPosition="below" [matTooltip]="CLOSE"></i>
+
+<div class="m-4 mt-5 popup-class" *ngIf="data.title === 'copy-link'">
+    <div class="popup-content mt-2">
+        <div class="copy-field">
+            <input type="text" id="urlField" class="url-input form-control" [(ngModel)]="url" readonly>
+            <button class="copy-btn" (click)="copyLink()">Copy Link</button>
+        </div>
+        <div class="horizontal-line">
+            <span>Or Share With</span>
+        </div>
+
+        <div class="share-buttons">
+            <a (click)="shareOnWhatsApp()"><img src="../../../../../assets/images/whatsup.png" alt="whatsup"></a>
+            <a (click)="shareOnInstagram()"><img src="../../../../../assets/images/instagram.png" alt="instagram"></a>
+            <a (click)="shareOnFacebook()"> <img src="../../../../../assets/images/facebook.png" alt="facebook"></a>
+        </div>
+    </div>
 </div>
 
 
-<div class="m-1 popup-class" *ngIf="data.title === 'submit-resume'">
+<button class="close" (click)="onClose()">
+    <i class="bi bi-x-lg" matTooltipPosition="below" [matTooltip]="CLOSE"></i>
+</button>
+
+<div class="m-1 popup-class" *ngIf="data.title === 'submit-resume' || data.title === 'apply-job'">
     <div class="submit-class">
         <p class="text-center main-heading mt-5">Submit Your Details</p>
         <div class="body-content">
@@ -101,7 +120,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3 col-md-6">
+                    <div class="mb-3 col-md-6 phone-number-design-popup">
                         <label for="phoneNumber" class="form-label">Phone Number *</label>
                         <div class="form-control-custom">
                             <ngx-intl-tel-input [cssClass]="'custom'" [preferredCountries]="preferredCountries"
@@ -125,9 +144,76 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mb-3 col-md-6" *ngIf="data.title === 'submit-resume'">
+                        <label for="contractType" class="form-label">Contract Type * </label>
+                        <select class="form-select" placeholder="Select Contract Type" formControlName="contractType">
+                            <option value="" disabled selected>Select Contract Type</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Permanent">Permanent</option>
+                            <option value="Both">Both</option>
+                        </select>
+                        <div *ngIf="
+                        customCodeForm.get('contractType')?.invalid &&
+                        (customCodeForm.get('contractType')?.dirty ||
+                          customCodeForm.get('contractType')?.touched)
+                      " class="text-danger">
+                            <div *ngIf="customCodeForm.get('contractType')?.errors?.['required']">
+                                Contract type is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6" *ngIf="data.title === 'submit-resume'">
+                        <label for="workArrangement" class="form-label">Work Arrangement * </label>
+                        <select class="form-select" placeholder="Select Work Arrangement"
+                            formControlName="workArrangement">
+                            <option value="" disabled selected>Select Work Arrangement</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Permanent">Permanent</option>
+                            <option value="Both">Both</option>
+                        </select>
+                        <div *ngIf="
+                        customCodeForm.get('workArrangement')?.invalid &&
+                        (customCodeForm.get('workArrangement')?.dirty ||
+                          customCodeForm.get('workArrangement')?.touched)
+                      " class="text-danger">
+                            <div *ngIf="customCodeForm.get('workArrangement')?.errors?.['required']">
+                                Work Arrangement is required.
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="mb-3">
-                        <label for="message" class="form-label">Any Additional Notes </label>
+                        <div class="input-wrapper">
+                            <label for="resume" class="form-label">Resume *</label>
+                            <input type="file" class="form-control" formControlName="resume" accept=".pdf"
+                                (change)="resume($event)" />
+
+                            <div *ngIf="fileUploaded" class="remove-icon">
+                                <i class="bi bi-x" [matTooltip]="REMOVE_FILE" (click)="removeFile()"></i>
+                            </div>
+                        </div>
+                        <div *ngIf="
+                customCodeForm.get('resume')?.invalid &&
+                (customCodeForm.get('resume')?.dirty ||
+                  customCodeForm.get('resume')?.touched)
+              " class="text-danger">
+                            <div *ngIf="customCodeForm.get('resume')?.errors?.['required']">
+                                Resume is required.
+                            </div>
+                            <div *ngIf="customCodeForm.get('resume')?.errors?.['invalidFile']">
+                                Only PDF files are allowed.
+                            </div>
+                            <div *ngIf="customCodeForm.get('resume')?.errors?.['invalidFileTypeOrSize']">
+                                Invalid file type or size (only PDF files less than 3MB are
+                                allowed).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Any Additional Notes
+                        </label>
                         <textarea class="form-control" formControlName="message" rows="3"
                             placeholder="Enter Your Message Here..."></textarea>
                     </div>

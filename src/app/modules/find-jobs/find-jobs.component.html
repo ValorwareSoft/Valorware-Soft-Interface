@@ -18,14 +18,28 @@
             <div class="card-body">
                 <p class="card-text">{{ card.number }}</p>
                 <h5 class="card-title mb-4">{{ card.title }}</h5>
-                <p class="card-text">Contract Type: {{ card.contractType }}</p>
-                <p class="card-text">Work Arrangement: {{ card.workArrangement }}</p>
-                <p class="card-text">Number of Positions: {{ card.numberOfPositions }}</p>
-                <p class="card-text">Posted On: {{ card.postedOn }}</p>
-                <p class="card-text">Number of Applicants: {{ card.numberOfApplicants }}</p>
+
+                <div class="location" >
+                    <i class="bi bi-geo-alt-fill"></i> Kothagudem, India
+                </div>
+                <div class="mini-tip" >
+                    <div>
+                        Full Time
+                    </div>
+                    <div>
+                        Remote
+                    </div>
+                    <div>
+                        2-4 Years
+                    </div>
+                </div>
+                <div class="time">
+                    2 days ago  <i class="bi bi-dot"></i> 210 Applicants
+                </div>
+
             </div>
             <div class="d-flex align-items-center justify-content-center">
-                <button>Apply Now</button>
+                <button (click)="applyNow(card.number)">Apply Now</button>
             </div>
         </div>
 
