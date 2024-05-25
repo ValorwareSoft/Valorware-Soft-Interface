@@ -6,7 +6,6 @@ import { HomeComponent } from './modules/home/home.component';
 import { ServicesComponent } from './modules/services/services.component';
 import { ViewJobComponent } from './modules/view-job/view-job.component';
 import { Routes, ExtraOptions, RouterModule } from '@angular/router';
-import { ValorwaresoftSuperadminComponent } from './modules/valorwaresoft-superadmin/valorwaresoft-superadmin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'find-jobs', component: FindJobsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   {path : 'apply/:cardNumber', component : ViewJobComponent},
-  {path : 'valorwaresoft-superadmin', component : ValorwaresoftSuperadminComponent}
 ];
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'top', 
